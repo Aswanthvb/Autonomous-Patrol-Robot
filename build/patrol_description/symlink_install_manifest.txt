@@ -1,0 +1,16 @@
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/urdf/patrol_robot.urdf.xacro
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/package_run_dependencies/patrol_description
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/parent_prefix_path/patrol_description
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/ament_prefix_path.sh
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/ament_prefix_path.dsv
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/path.sh
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/path.dsv
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.bash
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.sh
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.zsh
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.dsv
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.dsv
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/packages/patrol_description
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/cmake/patrol_descriptionConfig.cmake
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/cmake/patrol_descriptionConfig-version.cmake
+/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.xml

@@ -1,0 +1,25 @@
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/aswanth-v-b/patrol_ws/build/patrol_nav
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/launch/slam.launch.py
+-- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/config/slam_toolbox_mapping.yaml
+-- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/maps/.gitkeep
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/ament_index/resource_index/package_run_dependencies/patrol_nav
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/ament_index/resource_index/parent_prefix_path/patrol_nav
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/environment/path.sh
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/environment/path.dsv
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/local_setup.bash
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/local_setup.sh
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/local_setup.zsh
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/local_setup.dsv
+-- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.dsv
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/ament_index/resource_index/packages/patrol_nav
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/cmake/patrol_navConfig.cmake
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/cmake/patrol_navConfig-version.cmake
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.xml

@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: patrol-task-manager
+Version: 0.1.0
+Summary: Patrol state machine and event logging for the patrol robot
+Maintainer: aswanth-v-b
+Maintainer-email: aswanthvb009@gmail.com
+License: MIT

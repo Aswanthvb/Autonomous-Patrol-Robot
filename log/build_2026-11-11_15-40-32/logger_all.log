@@ -1,0 +1,451 @@
+[0.446s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.446s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x78ddb3e2a690>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x78ddb461f500>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x78ddb461f500>>)
+[0.544s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.544s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.544s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.544s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.544s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.544s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.544s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/aswanth-v-b/patrol_ws'
+[0.544s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.544s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.544s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.544s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.544s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.545s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.545s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.545s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.545s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.570s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extensions ['ignore', 'ignore_ament_install']
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extension 'ignore'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extension 'ignore_ament_install'
+[0.577s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extensions ['colcon_pkg']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extension 'colcon_pkg'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extensions ['colcon_meta']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extension 'colcon_meta'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extensions ['ros']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extension 'ros'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extensions ['cmake', 'python']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extension 'cmake'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extension 'python'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extensions ['python_setup_py']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(bash) by extension 'python_setup_py'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.578s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.579s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_bringup) by extension 'ignore'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_bringup) by extension 'ignore_ament_install'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_bringup) by extensions ['colcon_pkg']
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_bringup) by extension 'colcon_pkg'
+[0.580s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_bringup) by extensions ['colcon_meta']
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_bringup) by extension 'colcon_meta'
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_bringup) by extensions ['ros']
+[0.581s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_bringup) by extension 'ros'
+[0.585s] DEBUG:colcon.colcon_core.package_identification:Package 'src/patrol_bringup' with type 'ros.ament_cmake' and name 'patrol_bringup'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_description) by extensions ['ignore', 'ignore_ament_install']
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_description) by extension 'ignore'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_description) by extension 'ignore_ament_install'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_description) by extensions ['colcon_pkg']
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_description) by extension 'colcon_pkg'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_description) by extensions ['colcon_meta']
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_description) by extension 'colcon_meta'
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_description) by extensions ['ros']
+[0.586s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_description) by extension 'ros'
+[0.587s] DEBUG:colcon.colcon_core.package_identification:Package 'src/patrol_description' with type 'ros.ament_cmake' and name 'patrol_description'
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_nav) by extensions ['ignore', 'ignore_ament_install']
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_nav) by extension 'ignore'
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_nav) by extension 'ignore_ament_install'
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_nav) by extensions ['colcon_pkg']
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_nav) by extension 'colcon_pkg'
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_nav) by extensions ['colcon_meta']
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_nav) by extension 'colcon_meta'
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_nav) by extensions ['ros']
+[0.588s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_nav) by extension 'ros'
+[0.589s] DEBUG:colcon.colcon_core.package_identification:Package 'src/patrol_nav' with type 'ros.ament_cmake' and name 'patrol_nav'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_perception) by extensions ['ignore', 'ignore_ament_install']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_perception) by extension 'ignore'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_perception) by extension 'ignore_ament_install'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_perception) by extensions ['colcon_pkg']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_perception) by extension 'colcon_pkg'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_perception) by extensions ['colcon_meta']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_perception) by extension 'colcon_meta'
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_perception) by extensions ['ros']
+[0.590s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_perception) by extension 'ros'
+[0.591s] DEBUG:colcon.colcon_core.package_identification:Package 'src/patrol_perception' with type 'ros.ament_python' and name 'patrol_perception'
+[0.591s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_sim) by extensions ['ignore', 'ignore_ament_install']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_sim) by extension 'ignore'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_sim) by extension 'ignore_ament_install'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_sim) by extensions ['colcon_pkg']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_sim) by extension 'colcon_pkg'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_sim) by extensions ['colcon_meta']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_sim) by extension 'colcon_meta'
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_sim) by extensions ['ros']
+[0.592s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_sim) by extension 'ros'
+[0.593s] DEBUG:colcon.colcon_core.package_identification:Package 'src/patrol_sim' with type 'ros.ament_cmake' and name 'patrol_sim'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_task_manager) by extensions ['ignore', 'ignore_ament_install']
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_task_manager) by extension 'ignore'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_task_manager) by extension 'ignore_ament_install'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_task_manager) by extensions ['colcon_pkg']
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_task_manager) by extension 'colcon_pkg'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_task_manager) by extensions ['colcon_meta']
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_task_manager) by extension 'colcon_meta'
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_task_manager) by extensions ['ros']
+[0.593s] Level 1:colcon.colcon_core.package_identification:_identify(src/patrol_task_manager) by extension 'ros'
+[0.594s] DEBUG:colcon.colcon_core.package_identification:Package 'src/patrol_task_manager' with type 'ros.ament_python' and name 'patrol_task_manager'
+[0.594s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.594s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.594s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.594s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.594s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.630s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.630s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.635s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 6 installed packages in /home/aswanth-v-b/patrol_ws/install
+[0.637s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 395 installed packages in /opt/ros/jazzy
+[0.638s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_bringup' build argument 'cmake_args' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_bringup' build argument 'cmake_target' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.700s] DEBUG:colcon.colcon_core.verb:Building package 'patrol_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/aswanth-v-b/patrol_ws/build/patrol_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/aswanth-v-b/patrol_ws/install/patrol_bringup', 'merge_install': False, 'path': '/home/aswanth-v-b/patrol_ws/src/patrol_bringup', 'symlink_install': True, 'test_result_base': None}
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_description' build argument 'cmake_args' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_description' build argument 'cmake_target' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.700s] DEBUG:colcon.colcon_core.verb:Building package 'patrol_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/aswanth-v-b/patrol_ws/build/patrol_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/aswanth-v-b/patrol_ws/install/patrol_description', 'merge_install': False, 'path': '/home/aswanth-v-b/patrol_ws/src/patrol_description', 'symlink_install': True, 'test_result_base': None}
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_nav' build argument 'cmake_args' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_nav' build argument 'cmake_target' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_nav' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_nav' build argument 'cmake_clean_cache' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_nav' build argument 'cmake_clean_first' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_nav' build argument 'cmake_force_configure' from command line to 'False'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_nav' build argument 'ament_cmake_args' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_nav' build argument 'catkin_cmake_args' from command line to 'None'
+[0.700s] Level 5:colcon.colcon_core.verb:set package 'patrol_nav' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.700s] DEBUG:colcon.colcon_core.verb:Building package 'patrol_nav' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/aswanth-v-b/patrol_ws/build/patrol_nav', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/aswanth-v-b/patrol_ws/install/patrol_nav', 'merge_install': False, 'path': '/home/aswanth-v-b/patrol_ws/src/patrol_nav', 'symlink_install': True, 'test_result_base': None}
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_perception' build argument 'cmake_args' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_perception' build argument 'cmake_target' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_perception' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_perception' build argument 'cmake_clean_cache' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_perception' build argument 'cmake_clean_first' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_perception' build argument 'cmake_force_configure' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_perception' build argument 'ament_cmake_args' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_perception' build argument 'catkin_cmake_args' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_perception' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.701s] DEBUG:colcon.colcon_core.verb:Building package 'patrol_perception' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/aswanth-v-b/patrol_ws/build/patrol_perception', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/aswanth-v-b/patrol_ws/install/patrol_perception', 'merge_install': False, 'path': '/home/aswanth-v-b/patrol_ws/src/patrol_perception', 'symlink_install': True, 'test_result_base': None}
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_task_manager' build argument 'cmake_args' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_task_manager' build argument 'cmake_target' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_task_manager' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_task_manager' build argument 'cmake_clean_cache' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_task_manager' build argument 'cmake_clean_first' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_task_manager' build argument 'cmake_force_configure' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_task_manager' build argument 'ament_cmake_args' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_task_manager' build argument 'catkin_cmake_args' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_task_manager' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.701s] DEBUG:colcon.colcon_core.verb:Building package 'patrol_task_manager' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/aswanth-v-b/patrol_ws/build/patrol_task_manager', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager', 'merge_install': False, 'path': '/home/aswanth-v-b/patrol_ws/src/patrol_task_manager', 'symlink_install': True, 'test_result_base': None}
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_sim' build argument 'cmake_args' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_sim' build argument 'cmake_target' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_sim' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_sim' build argument 'cmake_clean_cache' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_sim' build argument 'cmake_clean_first' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_sim' build argument 'cmake_force_configure' from command line to 'False'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_sim' build argument 'ament_cmake_args' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_sim' build argument 'catkin_cmake_args' from command line to 'None'
+[0.701s] Level 5:colcon.colcon_core.verb:set package 'patrol_sim' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.701s] DEBUG:colcon.colcon_core.verb:Building package 'patrol_sim' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/aswanth-v-b/patrol_ws/build/patrol_sim', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/aswanth-v-b/patrol_ws/install/patrol_sim', 'merge_install': False, 'path': '/home/aswanth-v-b/patrol_ws/src/patrol_sim', 'symlink_install': True, 'test_result_base': None}
+[0.701s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.702s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.702s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/aswanth-v-b/patrol_ws/src/patrol_description' with build type 'ament_cmake'
+[0.702s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/aswanth-v-b/patrol_ws/src/patrol_description'
+[0.715s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.715s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.715s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.721s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/aswanth-v-b/patrol_ws/src/patrol_bringup' with build type 'ament_cmake'
+[0.721s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/aswanth-v-b/patrol_ws/src/patrol_bringup'
+[0.721s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.721s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.725s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/aswanth-v-b/patrol_ws/src/patrol_nav' with build type 'ament_cmake'
+[0.725s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/aswanth-v-b/patrol_ws/src/patrol_nav'
+[0.725s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.726s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.729s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/aswanth-v-b/patrol_ws/src/patrol_perception' with build type 'ament_python'
+[0.730s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_perception', 'ament_prefix_path')
+[0.730s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/hook/ament_prefix_path.ps1'
+[0.732s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/hook/ament_prefix_path.dsv'
+[0.734s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/hook/ament_prefix_path.sh'
+[0.736s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.736s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.751s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_description -- -j4 -l4
+[0.756s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_bringup -- -j4 -l4
+[0.765s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_nav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_nav -- -j4 -l4
+[1.020s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/aswanth-v-b/patrol_ws/src/patrol_perception'
+[1.020s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.021s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.026s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_nav' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_nav -- -j4 -l4
+[1.045s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_nav': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_nav
+[1.046s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_description -- -j4 -l4
+[1.050s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_description
+[1.051s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_bringup -- -j4 -l4
+[1.055s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_bringup
+[1.096s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patrol_nav)
+[1.096s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_nav' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_nav
+[1.112s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav' for CMake module files
+[1.112s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav' for CMake config files
+[1.113s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_nav', 'cmake_prefix_path')
+[1.113s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/hook/cmake_prefix_path.ps1'
+[1.113s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/hook/cmake_prefix_path.dsv'
+[1.114s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/hook/cmake_prefix_path.sh'
+[1.115s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav/bin'
+[1.115s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav/lib/pkgconfig/patrol_nav.pc'
+[1.115s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav/lib/python3.12/site-packages'
+[1.116s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav/bin'
+[1.116s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.ps1'
+[1.118s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.dsv'
+[1.119s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.sh'
+[1.120s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.bash'
+[1.122s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.zsh'
+[1.124s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/colcon-core/packages/patrol_nav)
+[1.126s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patrol_nav)
+[1.126s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav' for CMake module files
+[1.126s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav' for CMake config files
+[1.127s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_nav', 'cmake_prefix_path')
+[1.127s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/hook/cmake_prefix_path.ps1'
+[1.128s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/hook/cmake_prefix_path.dsv'
+[1.128s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/hook/cmake_prefix_path.sh'
+[1.129s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav/bin'
+[1.130s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav/lib/pkgconfig/patrol_nav.pc'
+[1.130s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav/lib/python3.12/site-packages'
+[1.130s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_nav/bin'
+[1.130s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.ps1'
+[1.131s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.dsv'
+[1.132s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.sh'
+[1.133s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.bash'
+[1.133s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/patrol_nav/package.zsh'
+[1.134s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aswanth-v-b/patrol_ws/install/patrol_nav/share/colcon-core/packages/patrol_nav)
+[1.137s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/aswanth-v-b/patrol_ws/src/patrol_task_manager' with build type 'ament_python'
+[1.137s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_task_manager', 'ament_prefix_path')
+[1.138s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/hook/ament_prefix_path.ps1'
+[1.138s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/hook/ament_prefix_path.dsv'
+[1.139s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/hook/ament_prefix_path.sh'
+[1.139s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.139s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.146s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patrol_bringup)
+[1.146s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup' for CMake module files
+[1.147s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup' for CMake config files
+[1.148s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_bringup', 'cmake_prefix_path')
+[1.148s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/hook/cmake_prefix_path.ps1'
+[1.148s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/hook/cmake_prefix_path.dsv'
+[1.149s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/hook/cmake_prefix_path.sh'
+[1.150s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/bin'
+[1.150s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/lib/pkgconfig/patrol_bringup.pc'
+[1.150s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/lib/python3.12/site-packages'
+[1.150s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/bin'
+[1.150s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/package.ps1'
+[1.151s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/package.dsv'
+[1.151s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_bringup
+[1.152s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/package.sh'
+[1.152s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/package.bash'
+[1.152s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/package.zsh'
+[1.153s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/colcon-core/packages/patrol_bringup)
+[1.153s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patrol_bringup)
+[1.153s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup' for CMake module files
+[1.154s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup' for CMake config files
+[1.154s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_bringup', 'cmake_prefix_path')
+[1.154s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/hook/cmake_prefix_path.ps1'
+[1.154s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/hook/cmake_prefix_path.dsv'
+[1.155s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/hook/cmake_prefix_path.sh'
+[1.155s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/bin'
+[1.155s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/lib/pkgconfig/patrol_bringup.pc'
+[1.155s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/lib/python3.12/site-packages'
+[1.156s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/bin'
+[1.156s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/package.ps1'
+[1.156s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/package.dsv'
+[1.157s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/package.sh'
+[1.158s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/package.bash'
+[1.158s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/patrol_bringup/package.zsh'
+[1.158s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aswanth-v-b/patrol_ws/install/patrol_bringup/share/colcon-core/packages/patrol_bringup)
+[1.160s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patrol_description)
+[1.160s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description' for CMake module files
+[1.162s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_description
+[1.162s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description' for CMake config files
+[1.163s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_description', 'cmake_prefix_path')
+[1.163s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/hook/cmake_prefix_path.ps1'
+[1.164s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/hook/cmake_prefix_path.dsv'
+[1.164s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/hook/cmake_prefix_path.sh'
+[1.165s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description/bin'
+[1.165s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description/lib/pkgconfig/patrol_description.pc'
+[1.165s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description/lib/python3.12/site-packages'
+[1.165s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description/bin'
+[1.165s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.ps1'
+[1.166s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.dsv'
+[1.166s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.sh'
+[1.166s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.bash'
+[1.167s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.zsh'
+[1.167s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aswanth-v-b/patrol_ws/install/patrol_description/share/colcon-core/packages/patrol_description)
+[1.167s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patrol_description)
+[1.167s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description' for CMake module files
+[1.168s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description' for CMake config files
+[1.168s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_description', 'cmake_prefix_path')
+[1.168s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/hook/cmake_prefix_path.ps1'
+[1.169s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/hook/cmake_prefix_path.dsv'
+[1.169s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/hook/cmake_prefix_path.sh'
+[1.170s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description/bin'
+[1.170s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description/lib/pkgconfig/patrol_description.pc'
+[1.170s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description/lib/python3.12/site-packages'
+[1.171s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_description/bin'
+[1.171s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.ps1'
+[1.171s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.dsv'
+[1.172s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.sh'
+[1.172s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.bash'
+[1.172s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.zsh'
+[1.173s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aswanth-v-b/patrol_ws/install/patrol_description/share/colcon-core/packages/patrol_description)
+[1.173s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/aswanth-v-b/patrol_ws/src/patrol_sim' with build type 'ament_cmake'
+[1.173s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/aswanth-v-b/patrol_ws/src/patrol_sim'
+[1.173s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.173s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.403s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/aswanth-v-b/patrol_ws/src/patrol_task_manager'
+[1.404s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.404s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.422s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_sim': CMAKE_PREFIX_PATH=/home/aswanth-v-b/patrol_ws/install/patrol_description:/home/aswanth-v-b/patrol_ws/install/patrol_sim:/home/aswanth-v-b/patrol_ws/install/patrol_nav:/home/aswanth-v-b/patrol_ws/install/patrol_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_sim -- -j4 -l4
+[1.500s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_sim' returned '0': CMAKE_PREFIX_PATH=/home/aswanth-v-b/patrol_ws/install/patrol_description:/home/aswanth-v-b/patrol_ws/install/patrol_sim:/home/aswanth-v-b/patrol_ws/install/patrol_nav:/home/aswanth-v-b/patrol_ws/install/patrol_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_sim -- -j4 -l4
+[1.504s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_sim': CMAKE_PREFIX_PATH=/home/aswanth-v-b/patrol_ws/install/patrol_description:/home/aswanth-v-b/patrol_ws/install/patrol_sim:/home/aswanth-v-b/patrol_ws/install/patrol_nav:/home/aswanth-v-b/patrol_ws/install/patrol_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_sim
+[1.562s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patrol_sim)
+[1.562s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim' for CMake module files
+[1.563s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_sim' returned '0': CMAKE_PREFIX_PATH=/home/aswanth-v-b/patrol_ws/install/patrol_description:/home/aswanth-v-b/patrol_ws/install/patrol_sim:/home/aswanth-v-b/patrol_ws/install/patrol_nav:/home/aswanth-v-b/patrol_ws/install/patrol_bringup:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_sim
+[1.564s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim' for CMake config files
+[1.564s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_sim', 'cmake_prefix_path')
+[1.565s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/hook/cmake_prefix_path.ps1'
+[1.566s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/hook/cmake_prefix_path.dsv'
+[1.566s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/hook/cmake_prefix_path.sh'
+[1.567s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim/bin'
+[1.567s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim/lib/pkgconfig/patrol_sim.pc'
+[1.567s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim/lib/python3.12/site-packages'
+[1.568s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim/bin'
+[1.568s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/package.ps1'
+[1.569s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/package.dsv'
+[1.569s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/package.sh'
+[1.570s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/package.bash'
+[1.570s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/package.zsh'
+[1.571s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/colcon-core/packages/patrol_sim)
+[1.571s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patrol_sim)
+[1.571s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim' for CMake module files
+[1.572s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim' for CMake config files
+[1.572s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_sim', 'cmake_prefix_path')
+[1.572s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/hook/cmake_prefix_path.ps1'
+[1.572s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/hook/cmake_prefix_path.dsv'
+[1.573s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/hook/cmake_prefix_path.sh'
+[1.573s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim/bin'
+[1.573s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim/lib/pkgconfig/patrol_sim.pc'
+[1.574s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim/lib/python3.12/site-packages'
+[1.574s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_sim/bin'
+[1.574s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/package.ps1'
+[1.574s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/package.dsv'
+[1.575s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/package.sh'
+[1.575s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/package.bash'
+[1.576s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/patrol_sim/package.zsh'
+[1.576s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aswanth-v-b/patrol_ws/install/patrol_sim/share/colcon-core/packages/patrol_sim)
+[2.137s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: bdist_dumb, test, upload_docs, install_egg_info, install_headers, extract_messages, install_lib, egg_info, editable_wheel, alias, easy_install, bdist, build_clib, develop, build_ext, symlink_data, update_catalog, saveopts, sdist, clean, build_py, dist_info, register, install_scripts, install, bdist_rpm, build_scripts, compile_catalog, init_catalog, build, check, upload, bdist_egg, rotate, install_data, setopt
+[2.143s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: bdist_dumb, test, upload_docs, install_egg_info, install_headers, extract_messages, install_lib, egg_info, editable_wheel, alias, easy_install, bdist, build_clib, develop, build_ext, symlink_data, update_catalog, saveopts, sdist, clean, build_py, dist_info, register, install_scripts, install, bdist_rpm, build_scripts, compile_catalog, init_catalog, build, check, upload, bdist_egg, rotate, install_data, setopt
+[2.442s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools 'develop' options: --no-find-links, --always-copy, --build-directory, --upgrade, --no-user-cfg, --help, --uninstall, --no-deps, --verbose, --editable, --user, --script-dir, --install-dir, --local-snapshots-ok, --exclude-scripts, --multi-version, --zip-ok, --index-url, --quiet, --force-installation-into-system-dir, --egg-path, --dry-run, --install-layout, --find-links, --optimize, --always-unzip, --site-dirs, --record, --allow-hosts, --version, --prefix
+[2.453s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_task_manager': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aswanth-v-b/patrol_ws/build/patrol_task_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/aswanth-v-b/patrol_ws/build/patrol_task_manager/build --no-deps symlink_data
+[2.478s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools 'develop' options: --no-find-links, --always-copy, --build-directory, --upgrade, --no-user-cfg, --help, --uninstall, --no-deps, --verbose, --editable, --user, --script-dir, --install-dir, --local-snapshots-ok, --exclude-scripts, --multi-version, --zip-ok, --index-url, --quiet, --force-installation-into-system-dir, --egg-path, --dry-run, --install-layout, --find-links, --optimize, --always-unzip, --site-dirs, --record, --allow-hosts, --version, --prefix
+[2.483s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_perception': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aswanth-v-b/patrol_ws/build/patrol_perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aswanth-v-b/patrol_ws/install/patrol_perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/aswanth-v-b/patrol_ws/build/patrol_perception/build --no-deps symlink_data
+[2.990s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_task_manager', 'pythonpath_develop')
+[2.990s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/build/patrol_task_manager/share/patrol_task_manager/hook/pythonpath_develop.ps1'
+[2.991s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_task_manager' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aswanth-v-b/patrol_ws/build/patrol_task_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/aswanth-v-b/patrol_ws/build/patrol_task_manager/build --no-deps symlink_data
+[2.992s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/build/patrol_task_manager/share/patrol_task_manager/hook/pythonpath_develop.dsv'
+[2.992s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/build/patrol_task_manager/share/patrol_task_manager/hook/pythonpath_develop.sh'
+[2.993s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager' for CMake module files
+[2.994s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager' for CMake config files
+[2.994s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/lib'
+[2.994s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/bin'
+[2.995s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/lib/pkgconfig/patrol_task_manager.pc'
+[2.995s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/lib/python3.12/site-packages'
+[2.995s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_task_manager', 'pythonpath')
+[2.995s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/hook/pythonpath.ps1'
+[2.996s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/hook/pythonpath.dsv'
+[2.996s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/hook/pythonpath.sh'
+[2.997s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/bin'
+[2.997s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patrol_task_manager)
+[2.998s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/package.ps1'
+[2.998s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/package.dsv'
+[3.000s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/package.sh'
+[3.001s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/package.bash'
+[3.001s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/package.zsh'
+[3.002s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/colcon-core/packages/patrol_task_manager)
+[3.038s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_perception', 'pythonpath_develop')
+[3.038s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/build/patrol_perception/share/patrol_perception/hook/pythonpath_develop.ps1'
+[3.039s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_perception' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aswanth-v-b/patrol_ws/build/patrol_perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aswanth-v-b/patrol_ws/install/patrol_perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/aswanth-v-b/patrol_ws/build/patrol_perception/build --no-deps symlink_data
+[3.040s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/build/patrol_perception/share/patrol_perception/hook/pythonpath_develop.dsv'
+[3.040s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/build/patrol_perception/share/patrol_perception/hook/pythonpath_develop.sh'
+[3.041s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_perception' for CMake module files
+[3.042s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_perception' for CMake config files
+[3.042s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_perception/lib'
+[3.042s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_perception/bin'
+[3.042s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_perception/lib/pkgconfig/patrol_perception.pc'
+[3.043s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_perception/lib/python3.12/site-packages'
+[3.043s] Level 1:colcon.colcon_core.shell:create_environment_hook('patrol_perception', 'pythonpath')
+[3.043s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/hook/pythonpath.ps1'
+[3.044s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/hook/pythonpath.dsv'
+[3.045s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/hook/pythonpath.sh'
+[3.046s] Level 1:colcon.colcon_core.environment:checking '/home/aswanth-v-b/patrol_ws/install/patrol_perception/bin'
+[3.046s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patrol_perception)
+[3.046s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/package.ps1'
+[3.047s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/package.dsv'
+[3.047s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/package.sh'
+[3.048s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/package.bash'
+[3.048s] INFO:colcon.colcon_core.shell:Creating package script '/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/package.zsh'
+[3.049s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/aswanth-v-b/patrol_ws/install/patrol_perception/share/colcon-core/packages/patrol_perception)
+[3.049s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.049s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.049s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.050s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.062s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.062s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.062s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.093s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.094s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/aswanth-v-b/patrol_ws/install/local_setup.ps1'
+[3.095s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/aswanth-v-b/patrol_ws/install/_local_setup_util_ps1.py'
+[3.097s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/aswanth-v-b/patrol_ws/install/setup.ps1'
+[3.099s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/aswanth-v-b/patrol_ws/install/local_setup.sh'
+[3.100s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/aswanth-v-b/patrol_ws/install/_local_setup_util_sh.py'
+[3.101s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/aswanth-v-b/patrol_ws/install/setup.sh'
+[3.102s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/aswanth-v-b/patrol_ws/install/local_setup.bash'
+[3.104s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/aswanth-v-b/patrol_ws/install/setup.bash'
+[3.106s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/aswanth-v-b/patrol_ws/install/local_setup.zsh'
+[3.107s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/aswanth-v-b/patrol_ws/install/setup.zsh'

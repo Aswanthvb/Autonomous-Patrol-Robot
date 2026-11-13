@@ -1,0 +1,28 @@
+[2.523s] Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_task_manager': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aswanth-v-b/patrol_ws/build/patrol_task_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/aswanth-v-b/patrol_ws/build/patrol_task_manager/build --no-deps symlink_data
+[3.133s] running develop
+[3.496s] running egg_info
+[3.496s] creating patrol_task_manager.egg-info
+[3.535s] writing patrol_task_manager.egg-info/PKG-INFO
+[3.537s] writing dependency_links to patrol_task_manager.egg-info/dependency_links.txt
+[3.537s] writing entry points to patrol_task_manager.egg-info/entry_points.txt
+[3.542s] writing requirements to patrol_task_manager.egg-info/requires.txt
+[3.542s] writing top-level names to patrol_task_manager.egg-info/top_level.txt
+[3.548s] writing manifest file 'patrol_task_manager.egg-info/SOURCES.txt'
+[3.606s] reading manifest file 'patrol_task_manager.egg-info/SOURCES.txt'
+[3.609s] writing manifest file 'patrol_task_manager.egg-info/SOURCES.txt'
+[3.672s] running build_ext
+[3.672s] Creating /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/lib/python3.12/site-packages/patrol-task-manager.egg-link (link to .)
+[3.672s] Installing patrol_manager script to /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/lib/patrol_task_manager
+[3.672s] 
+[3.672s] Installed /home/aswanth-v-b/patrol_ws/build/patrol_task_manager
+[3.672s] running symlink_data
+[3.672s] creating /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/ament_index
+[3.672s] creating /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/ament_index/resource_index
+[3.672s] creating /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/ament_index/resource_index/packages
+[3.672s] symbolically linking /home/aswanth-v-b/patrol_ws/build/patrol_task_manager/resource/patrol_task_manager -> /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/ament_index/resource_index/packages
+[3.672s] symbolically linking /home/aswanth-v-b/patrol_ws/build/patrol_task_manager/package.xml -> /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager
+[3.672s] creating /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/launch
+[3.672s] symbolically linking /home/aswanth-v-b/patrol_ws/build/patrol_task_manager/launch/patrol.launch.py -> /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/launch
+[3.672s] creating /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/config
+[3.672s] symbolically linking /home/aswanth-v-b/patrol_ws/build/patrol_task_manager/config/patrol_waypoints.yaml -> /home/aswanth-v-b/patrol_ws/install/patrol_task_manager/share/patrol_task_manager/config
+[3.759s] Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_task_manager' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aswanth-v-b/patrol_ws/build/patrol_task_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/aswanth-v-b/patrol_ws/build/patrol_task_manager/build --no-deps symlink_data

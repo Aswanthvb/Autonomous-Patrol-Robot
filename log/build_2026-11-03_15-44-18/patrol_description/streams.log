@@ -1,0 +1,44 @@
+[0.033s] Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/aswanth-v-b/patrol_ws/src/patrol_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/aswanth-v-b/patrol_ws/install/patrol_description
+[0.334s] -- The C compiler identification is GNU 13.3.0
+[0.519s] -- The CXX compiler identification is GNU 13.3.0
+[0.559s] -- Detecting C compiler ABI info
+[0.774s] -- Detecting C compiler ABI info - done
+[0.789s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.791s] -- Detecting C compile features
+[0.792s] -- Detecting C compile features - done
+[0.815s] -- Detecting CXX compiler ABI info
+[1.039s] -- Detecting CXX compiler ABI info - done
+[1.050s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.050s] -- Detecting CXX compile features
+[1.051s] -- Detecting CXX compile features - done
+[1.071s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.352s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.566s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.770s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.036s] -- Added test 'lint_cmake' to check CMake code style
+[2.040s] -- Added test 'xmllint' to check XML markup files
+[2.048s] -- Configuring done (1.9s)
+[2.061s] -- Generating done (0.0s)
+[2.064s] -- Build files have been written to: /home/aswanth-v-b/patrol_ws/build/patrol_description
+[2.082s] Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/aswanth-v-b/patrol_ws/src/patrol_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/aswanth-v-b/patrol_ws/install/patrol_description
+[2.083s] Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_description -- -j4 -l4
+[2.211s] Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_description -- -j4 -l4
+[2.212s] Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_description
+[2.227s] -- Install configuration: ""
+[2.232s] -- Execute custom install script
+[2.232s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/package_run_dependencies/patrol_description
+[2.248s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/parent_prefix_path/patrol_description
+[2.272s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/ament_prefix_path.sh
+[2.289s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/ament_prefix_path.dsv
+[2.332s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/path.sh
+[2.362s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/path.dsv
+[2.383s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.bash
+[2.401s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.sh
+[2.426s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.zsh
+[2.449s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.dsv
+[2.470s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.dsv
+[2.523s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/packages/patrol_description
+[2.574s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/cmake/patrol_descriptionConfig.cmake
+[2.614s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/cmake/patrol_descriptionConfig-version.cmake
+[2.653s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.xml
+[2.691s] Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_description

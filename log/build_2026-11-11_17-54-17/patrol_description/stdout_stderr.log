@@ -1,0 +1,18 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/urdf/patrol_robot.urdf.xacro
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/package_run_dependencies/patrol_description
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/parent_prefix_path/patrol_description
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/path.sh
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/path.dsv
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.bash
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.sh
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.zsh
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.dsv
+-- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.dsv
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/packages/patrol_description
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/cmake/patrol_descriptionConfig.cmake
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/cmake/patrol_descriptionConfig-version.cmake
+-- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.xml

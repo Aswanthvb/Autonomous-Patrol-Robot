@@ -1,0 +1,20 @@
+running develop
+running egg_info
+creating patrol_perception.egg-info
+writing patrol_perception.egg-info/PKG-INFO
+writing dependency_links to patrol_perception.egg-info/dependency_links.txt
+writing requirements to patrol_perception.egg-info/requires.txt
+writing top-level names to patrol_perception.egg-info/top_level.txt
+writing manifest file 'patrol_perception.egg-info/SOURCES.txt'
+reading manifest file 'patrol_perception.egg-info/SOURCES.txt'
+writing manifest file 'patrol_perception.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/aswanth-v-b/patrol_ws/install/patrol_perception/lib/python3.12/site-packages/patrol-perception.egg-link (link to .)
+
+Installed /home/aswanth-v-b/patrol_ws/build/patrol_perception
+running symlink_data
+creating /home/aswanth-v-b/patrol_ws/install/patrol_perception/share/ament_index
+creating /home/aswanth-v-b/patrol_ws/install/patrol_perception/share/ament_index/resource_index
+creating /home/aswanth-v-b/patrol_ws/install/patrol_perception/share/ament_index/resource_index/packages
+symbolically linking /home/aswanth-v-b/patrol_ws/build/patrol_perception/resource/patrol_perception -> /home/aswanth-v-b/patrol_ws/install/patrol_perception/share/ament_index/resource_index/packages
+symbolically linking /home/aswanth-v-b/patrol_ws/build/patrol_perception/package.xml -> /home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception

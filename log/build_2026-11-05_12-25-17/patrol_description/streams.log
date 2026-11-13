@@ -1,0 +1,22 @@
+[0.032s] Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_description -- -j4 -l4
+[0.253s] Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aswanth-v-b/patrol_ws/build/patrol_description -- -j4 -l4
+[0.255s] Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_description
+[0.264s] -- Install configuration: ""
+[0.264s] -- Execute custom install script
+[0.265s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/urdf/patrol_robot.urdf.xacro
+[0.265s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/package_run_dependencies/patrol_description
+[0.265s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/parent_prefix_path/patrol_description
+[0.265s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/ament_prefix_path.sh
+[0.268s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/ament_prefix_path.dsv
+[0.269s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/path.sh
+[0.269s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/environment/path.dsv
+[0.269s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.bash
+[0.269s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.sh
+[0.269s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.zsh
+[0.269s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/local_setup.dsv
+[0.269s] -- Symlinking: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.dsv
+[0.282s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/ament_index/resource_index/packages/patrol_description
+[0.282s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/cmake/patrol_descriptionConfig.cmake
+[0.283s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/cmake/patrol_descriptionConfig-version.cmake
+[0.283s] -- Up-to-date symlink: /home/aswanth-v-b/patrol_ws/install/patrol_description/share/patrol_description/package.xml
+[0.316s] Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aswanth-v-b/patrol_ws/install/patrol_task_manager:/home/aswanth-v-b/patrol_ws/install/patrol_perception:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aswanth-v-b/patrol_ws/build/patrol_description

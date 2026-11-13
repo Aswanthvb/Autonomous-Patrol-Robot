@@ -1,0 +1,2 @@
+[console_scripts]
+patrol_manager = patrol_task_manager.patrol_manager:main

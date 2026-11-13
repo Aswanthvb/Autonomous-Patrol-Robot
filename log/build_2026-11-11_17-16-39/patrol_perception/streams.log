@@ -1,0 +1,19 @@
+[1.000s] Invoking command in '/home/aswanth-v-b/patrol_ws/build/patrol_perception': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/aswanth-v-b/patrol_ws/build/patrol_perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aswanth-v-b/patrol_ws/install/patrol_perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/aswanth-v-b/patrol_ws/build/patrol_perception/build --no-deps symlink_data
+[1.257s] running develop
+[1.402s] running egg_info
+[1.420s] writing patrol_perception.egg-info/PKG-INFO
+[1.420s] writing dependency_links to patrol_perception.egg-info/dependency_links.txt
+[1.421s] writing entry points to patrol_perception.egg-info/entry_points.txt
+[1.421s] writing requirements to patrol_perception.egg-info/requires.txt
+[1.421s] writing top-level names to patrol_perception.egg-info/top_level.txt
+[1.451s] reading manifest file 'patrol_perception.egg-info/SOURCES.txt'
+[1.452s] writing manifest file 'patrol_perception.egg-info/SOURCES.txt'
+[1.466s] running build_ext
+[1.467s] Creating /home/aswanth-v-b/patrol_ws/install/patrol_perception/lib/python3.12/site-packages/patrol-perception.egg-link (link to .)
+[1.467s] Installing yolo_node script to /home/aswanth-v-b/patrol_ws/install/patrol_perception/lib/patrol_perception
+[1.467s] 
+[1.467s] Installed /home/aswanth-v-b/patrol_ws/build/patrol_perception
+[1.468s] running symlink_data
+[1.468s] creating /home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/launch
+[1.468s] symbolically linking /home/aswanth-v-b/patrol_ws/build/patrol_perception/launch/detect.launch.py -> /home/aswanth-v-b/patrol_ws/install/patrol_perception/share/patrol_perception/launch
+[1.509s] Invoked command in '/home/aswanth-v-b/patrol_ws/build/patrol_perception' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/aswanth-v-b/patrol_ws/build/patrol_perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aswanth-v-b/patrol_ws/install/patrol_perception/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/aswanth-v-b/patrol_ws/build/patrol_perception/build --no-deps symlink_data

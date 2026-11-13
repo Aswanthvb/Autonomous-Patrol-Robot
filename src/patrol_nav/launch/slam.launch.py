@@ -1,0 +1,21 @@
+import os
+
+from ament_index_python.packages import get_package_share_directory
+from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+
+
+def generate_launch_description():
+    nav_share = get_package_share_directory("patrol_nav")
+    slam_share = get_package_share_directory("slam_toolbox")
+
+    slam = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(slam_share, "launch", "online_async_launch.py")),
+        launch_arguments={
+            "slam_params_file": os.path.join(nav_share, "config", "slam_toolbox_mapping.yaml"),
+            "use_sim_time": "true",
+        }.items(),
+    )
+    return LaunchDescription([slam])
