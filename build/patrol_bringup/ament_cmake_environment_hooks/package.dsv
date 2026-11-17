@@ -1,4 +1,0 @@
-source;share/patrol_bringup/local_setup.bash
-source;share/patrol_bringup/local_setup.dsv
-source;share/patrol_bringup/local_setup.sh
-source;share/patrol_bringup/local_setup.zsh

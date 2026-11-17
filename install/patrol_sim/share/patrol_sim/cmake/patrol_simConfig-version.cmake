@@ -1,1 +1,0 @@
-/home/aswanth-v-b/patrol_ws/build/patrol_sim/ament_cmake_core/patrol_simConfig-version.cmake

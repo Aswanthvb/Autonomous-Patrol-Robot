@@ -1,1 +1,0 @@
-/home/aswanth-v-b/patrol_ws/build/patrol_perception/launch/log.launch.py

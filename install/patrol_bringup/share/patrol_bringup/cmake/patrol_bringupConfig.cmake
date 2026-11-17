@@ -1,1 +1,0 @@
-/home/aswanth-v-b/patrol_ws/build/patrol_bringup/ament_cmake_core/patrol_bringupConfig.cmake

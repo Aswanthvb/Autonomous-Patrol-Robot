@@ -1,1 +1,0 @@
-/home/aswanth-v-b/patrol_ws/build/patrol_task_manager/launch/patrol.launch.py

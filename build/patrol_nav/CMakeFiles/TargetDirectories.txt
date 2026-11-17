@@ -1,9 +1,0 @@
-/home/aswanth-v-b/patrol_ws/build/patrol_nav/CMakeFiles/uninstall.dir
-/home/aswanth-v-b/patrol_ws/build/patrol_nav/CMakeFiles/patrol_nav_uninstall.dir
-/home/aswanth-v-b/patrol_ws/build/patrol_nav/CMakeFiles/test.dir
-/home/aswanth-v-b/patrol_ws/build/patrol_nav/CMakeFiles/edit_cache.dir
-/home/aswanth-v-b/patrol_ws/build/patrol_nav/CMakeFiles/rebuild_cache.dir
-/home/aswanth-v-b/patrol_ws/build/patrol_nav/CMakeFiles/list_install_components.dir
-/home/aswanth-v-b/patrol_ws/build/patrol_nav/CMakeFiles/install.dir
-/home/aswanth-v-b/patrol_ws/build/patrol_nav/CMakeFiles/install/local.dir
-/home/aswanth-v-b/patrol_ws/build/patrol_nav/CMakeFiles/install/strip.dir
