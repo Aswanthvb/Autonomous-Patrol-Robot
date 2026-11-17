@@ -2,7 +2,9 @@ package.xml
 setup.cfg
 setup.py
 launch/detect.launch.py
+launch/log.launch.py
 patrol_perception/__init__.py
+patrol_perception/detection_logger.py
 patrol_perception/yolo_node.py
 patrol_perception.egg-info/PKG-INFO
 patrol_perception.egg-info/SOURCES.txt

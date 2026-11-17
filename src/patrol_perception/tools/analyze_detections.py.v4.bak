@@ -1,0 +1,307 @@
+#!/usr/bin/env python3
+"""Match logged detections to the ground truth and tabulate hits and misses.
+
+For every logged frame and every ground-truth object, the script decides whether the object
+was IN VIEW: inside the camera's horizontal field of view, within max range, and with a clear
+line of sight on the saved map (walls block; low boxes block only low objects, because the camera
+is 0.45 m high and a person is taller than the boxes). If it was in view, the frame counts as detected when a detection
+of the right class has its box centre near where the object projects in the image.
+Frames in which the robot turns faster than TURN_RATE_LIMIT are not scored (the pose lags),
+and an object counts as visible if any part of it is (centre and both sides are tested).
+Extra boxes on an object that already has a matched box are counted as duplicates. Detections that
+match nothing are false positives. An object whose centre is just outside the
+field of view but still partly in the picture is not counted as a miss, and a detection of it
+is not counted as a false positive.
+
+Usage: python3 analyze_detections.py [run_dir]     (default: newest ~/detection_runs/det_*)
+"""
+import csv
+import glob
+import math
+import os
+import sys
+from collections import defaultdict
+
+import numpy as np
+import yaml
+
+HFOV = 1.047            # camera horizontal field of view (rad), from the robot model
+IMG_W = 640
+CAM_FORWARD = 0.19      # camera is 0.19 m in front of base_footprint (robot model)
+MAX_RANGE = 8.0         # farthest distance counted as "in view" (m)
+WORLD_TO_MAP = (2.0, 0.0)   # map = world + (2.0, 0.0), because the map origin is the spawn point
+BINS = [0.0, 1.5, 3.0, 4.5, 6.0, 8.0]
+HALF_WIDTH = {'person': 0.30, 'backpack': 0.20}   # approx object half-width (m), for edge-of-frame cases
+EDGE_MARGIN_PX = 20.0
+TURN_RATE_LIMIT = 0.5    # rad/s; faster turns make the logged pose unreliable (AMCL lags a fast turn)
+CAM_HEIGHT = 0.45       # camera height above the floor (m), from the robot model
+OBJ_HEIGHT = {'person': 1.5, 'backpack': 0.35}   # height of the point on the object that must be visible (m)
+# Low obstacles that do NOT block the view of tall objects: (map x, map y, size x, size y, height).
+# Taken from patrol_world.sdf (obstacle boxes), shifted by the world-to-map offset. Walls are never listed.
+LOW_OBSTACLES = [(-1.0, 1.5, 0.6, 0.6, 0.6), (5.0, -1.0, 0.8, 0.5, 0.7), (4.0, 1.8, 0.5, 0.5, 0.5)]
+PASS_GAP_S = 3.0        # a gap longer than this between in-view frames starts a new pass
+HOME = os.path.expanduser('~')
+GT_CSV = os.path.join(HOME, 'patrol_ws/src/patrol_sim/worlds/ground_truth.csv')
+MAP_YAML = os.path.join(HOME, 'patrol_ws/src/patrol_nav/maps/patrol_map.yaml')
+
+
+def read_pgm(path):
+    data = open(path, 'rb').read()
+    pos, tokens = 0, []
+    while len(tokens) < 4:
+        while data[pos:pos + 1].isspace():
+            pos += 1
+        if data[pos:pos + 1] == b'#':
+            while data[pos:pos + 1] != b'\n':
+                pos += 1
+            continue
+        start = pos
+        while not data[pos:pos + 1].isspace():
+            pos += 1
+        tokens.append(data[start:pos])
+    pos += 1
+    if tokens[0] != b'P5':
+        raise ValueError('only binary PGM (P5) maps are supported')
+    w, h = int(tokens[1]), int(tokens[2])
+    return np.frombuffer(data[pos:pos + w * h], dtype=np.uint8).reshape(h, w)
+
+
+class Grid:
+    def __init__(self, yaml_path):
+        meta = yaml.safe_load(open(yaml_path))
+        img = meta['image']
+        if not os.path.isabs(img):
+            img = os.path.join(os.path.dirname(yaml_path), img)
+        self.arr = read_pgm(img)
+        self.res = float(meta['resolution'])
+        self.ox, self.oy = float(meta['origin'][0]), float(meta['origin'][1])
+        self.h, self.w = self.arr.shape
+
+    def occupied(self, x, y):
+        ix, iy = int((x - self.ox) / self.res), int((y - self.oy) / self.res)
+        row = self.h - 1 - iy
+        if ix < 0 or ix >= self.w or row < 0 or row >= self.h:
+            return False
+        return self.arr[row, ix] <= 100          # trinary map: 0 = occupied, 254 = free
+
+    def line_of_sight(self, a, b, ignore=None, ignore_r=0.6, h_obj=1.0):
+        """True if the camera can see the object. Walls block; low boxes block only when the
+        sight line to the object (rising from the camera height to h_obj) passes below their top."""
+        dist = math.hypot(b[0] - a[0], b[1] - a[1])
+        steps = max(2, int(dist / (self.res * 0.5)))
+        for i in range(steps + 1):
+            t = i / steps
+            x, y = a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])
+            if ignore is not None and math.hypot(x - ignore[0], y - ignore[1]) < ignore_r:
+                continue                       # the target itself is drawn in the map
+            if self.occupied(x, y):
+                low = low_height(x, y)
+                if low is None:
+                    return False               # a wall
+                if CAM_HEIGHT + t * (h_obj - CAM_HEIGHT) <= low:
+                    return False               # the sight line passes below the box top
+        return True
+
+
+def visible(grid, cam, gpt, h_obj, half_w):
+    """The object is visible if any part of it is: test the sight line to its centre and to both sides."""
+    dx, dy = gpt[0] - cam[0], gpt[1] - cam[1]
+    n = math.hypot(dx, dy) or 1.0
+    ox, oy = -dy / n, dx / n
+    for off in (0.0, half_w, -half_w):
+        if grid.line_of_sight(cam, (gpt[0] + off * ox, gpt[1] + off * oy), ignore=gpt, h_obj=h_obj):
+            return True
+    return False
+
+
+def low_height(x, y):
+    for cx, cy, sx, sy, h in LOW_OBSTACLES:
+        if abs(x - cx) <= sx / 2 + 0.1 and abs(y - cy) <= sy / 2 + 0.1:
+            return h
+    return None
+
+
+def wrap(a):
+    return math.atan2(math.sin(a), math.cos(a))
+
+
+def newest_run():
+    runs = sorted(glob.glob(os.path.join(HOME, 'detection_runs', 'det_*')))
+    if not runs:
+        sys.exit('No detection runs found in ~/detection_runs')
+    return runs[-1]
+
+
+def main():
+    run = sys.argv[1] if len(sys.argv) > 1 else newest_run()
+    grid = Grid(MAP_YAML)
+    gt = []
+    for r in csv.DictReader(open(GT_CSV)):
+        gt.append({'cls': r['class'], 'name': r['name'],
+                   'x': float(r['x']) + WORLD_TO_MAP[0], 'y': float(r['y']) + WORLD_TO_MAP[1]})
+    frames = [r for r in csv.DictReader(open(os.path.join(run, 'frames.csv')))
+              if r['robot_x'] != '']
+    skipped = sum(1 for _ in csv.DictReader(open(os.path.join(run, 'frames.csv')))) - len(frames)
+    dets = defaultdict(list)
+    for i, r in enumerate(csv.DictReader(open(os.path.join(run, 'detections.csv')))):
+        r['_id'] = i
+        dets[int(r['frame'])].append(r)
+
+    f_px = (IMG_W / 2.0) / math.tan(HFOV / 2.0)
+    # frames in which the robot was turning fast: the pose lags, so they are not scored
+    ordered = sorted(frames, key=lambda r: float(r['sim_time']))
+    turning = set()
+    for i, r in enumerate(ordered):
+        a_, b_ = ordered[max(i - 1, 0)], ordered[min(i + 1, len(ordered) - 1)]
+        dt = float(b_['sim_time']) - float(a_['sim_time'])
+        if dt > 0 and abs(wrap(float(b_['robot_yaw']) - float(a_['robot_yaw']))) / dt > TURN_RATE_LIMIT:
+            turning.add(int(r['frame']))
+    turn_frames = defaultdict(int)
+    turn_dets = []
+    matched_ids = set()
+    dup_ids = set()          # extra boxes on an object that already has a matched box
+    edge_hits = defaultdict(int)
+    records = []                      # one per (frame, object) where the object was in view
+    for fr in frames:
+        rx, ry, yaw = float(fr['robot_x']), float(fr['robot_y']), float(fr['robot_yaw'])
+        cam = (rx + CAM_FORWARD * math.cos(yaw), ry + CAM_FORWARD * math.sin(yaw))
+        fdets = dets.get(int(fr['frame']), [])
+        is_turning = int(fr['frame']) in turning
+        for g in gt:
+            dx, dy = g['x'] - cam[0], g['y'] - cam[1]
+            dist = math.hypot(dx, dy)
+            bearing = wrap(math.atan2(dy, dx) - yaw)
+            half_ang = math.atan2(HALF_WIDTH.get(g['cls'], 0.25), max(dist, 0.1))
+            # 'partial' = object centre just outside the FOV but part of it is still in the picture
+            if dist > MAX_RANGE or abs(bearing) > HFOV / 2.0 + half_ang:
+                continue
+            partial = abs(bearing) > HFOV / 2.0
+            if not visible(grid, cam, (g['x'], g['y']), OBJ_HEIGHT.get(g['cls'], 1.0),
+                           HALF_WIDTH.get(g['cls'], 0.25)):
+                continue
+            px = IMG_W / 2.0 - f_px * math.tan(bearing)
+            hw_px = f_px * math.tan(half_ang)
+            # candidate boxes: right class, overlapping where the object should appear
+            cands = [d for d in fdets
+                     if d['class'] == g['cls'] and d['_id'] not in matched_ids and d['_id'] not in dup_ids
+                     and float(d['x1']) <= px + hw_px + EDGE_MARGIN_PX
+                     and float(d['x2']) >= px - hw_px - EDGE_MARGIN_PX]
+            hit, conf = False, ''
+            if cands:
+                best = max(cands, key=lambda d: float(d['conf']))     # the most confident box is the match
+                hit, conf = True, float(best['conf'])
+                matched_ids.add(best['_id'])
+                for d in cands:
+                    if d is not best:
+                        dup_ids.add(d['_id'])                         # extra box on the same object
+            if partial:
+                edge_hits[g['name']] += int(hit)     # not counted in the rates, but not a false positive
+                continue
+            if is_turning:
+                turn_frames[g['name']] += 1          # robot turning fast: pose unreliable, frame not scored
+                continue
+            records.append({'obj': g['name'], 'cls': g['cls'], 't': float(fr['sim_time']),
+                            'dist': dist, 'hit': hit, 'conf': conf,
+                            'lap': fr['lap'], 'wp': fr['waypoint']})
+
+    # ---- by distance
+    rows = []
+    for g in gt:
+        for lo, hi in zip(BINS[:-1], BINS[1:]):
+            rs = [r for r in records if r['obj'] == g['name'] and lo <= r['dist'] < hi]
+            n_hit = sum(r['hit'] for r in rs)
+            confs = [r['conf'] for r in rs if r['hit']]
+            rows.append({'object': g['name'], 'class': g['cls'], 'distance_m': f'{lo:.1f}-{hi:.1f}',
+                         'frames_in_view': len(rs), 'frames_detected': n_hit,
+                         'detection_rate': round(n_hit / len(rs), 3) if rs else '',
+                         'mean_confidence': round(sum(confs) / len(confs), 3) if confs else ''})
+    write(os.path.join(run, 'detection_by_distance.csv'), rows)
+
+    # ---- passes (contiguous periods in which an object was in view)
+    pass_rows = []
+    for g in gt:
+        rs = sorted((r for r in records if r['obj'] == g['name']), key=lambda r: r['t'])
+        groups, cur = [], []
+        for r in rs:
+            if cur and r['t'] - cur[-1]['t'] > PASS_GAP_S:
+                groups.append(cur)
+                cur = []
+            cur.append(r)
+        if cur:
+            groups.append(cur)
+        for k, grp in enumerate(groups, 1):
+            hits = [r for r in grp if r['hit']]
+            pass_rows.append({
+                'object': g['name'], 'pass': k, 'start_t': round(grp[0]['t'], 1),
+                'end_t': round(grp[-1]['t'], 1), 'lap': grp[0]['lap'], 'waypoint': grp[0]['wp'],
+                'frames_in_view': len(grp), 'frames_detected': len(hits),
+                'detected': bool(hits),
+                'first_detection_distance_m': round(hits[0]['dist'], 2) if hits else '',
+                'closest_distance_m': round(min(r['dist'] for r in grp), 2)})
+    write(os.path.join(run, 'detection_passes.csv'), pass_rows)
+
+    # ---- false positives
+    fp_rows, n_dets = [], 0
+    for fdl in dets.values():
+        for d in fdl:
+            n_dets += 1
+            if d['_id'] in matched_ids or d['_id'] in dup_ids:
+                continue
+            if int(d['frame']) in turning:
+                turn_dets.append(d['_id'])           # unmatched while turning fast: pose unreliable
+                continue
+            fp_rows.append({'sim_time': d['sim_time'], 'class': d['class'],
+                            'raw_class': d['raw_class'], 'conf': d['conf'],
+                            'lap': d['lap'], 'waypoint': d['waypoint'], 'snapshot': d['snapshot']})
+    write(os.path.join(run, 'false_positives.csv'), fp_rows)
+
+    # ---- summary
+    summary = {'run': os.path.basename(run), 'frames_logged': len(frames),
+               'frames_without_pose_skipped': skipped, 'detections_logged': n_dets,
+               'detections_matched': len(matched_ids), 'duplicate_boxes_on_matched_objects': len(dup_ids),
+               'unmatched_during_fast_turns': len(turn_dets),
+               'frames_during_fast_turns': len(turning),
+               'false_positives': len(fp_rows),
+               'precision_on_target': round((len(matched_ids) + len(dup_ids)) / n_dets, 3) if n_dets else None,
+               'objects': {}}
+    print(f'\nRun: {run}')
+    print(f'Frames: {len(frames)}   Detections: {n_dets}   Matched: {len(matched_ids)}   '
+          f'Duplicate boxes on a matched object: {len(dup_ids)}   False positives: {len(fp_rows)}')
+    print(f'Unmatched detections while the robot was turning faster than {TURN_RATE_LIMIT} rad/s '
+          f'(pose unreliable, not scored): {len(turn_dets)}   [{len(turning)} turning frames of {len(frames)}]')
+    for g in gt:
+        rs = [r for r in records if r['obj'] == g['name']]
+        ps = [p for p in pass_rows if p['object'] == g['name']]
+        n_hit = sum(r['hit'] for r in rs)
+        info = {'class': g['cls'], 'frames_in_view': len(rs), 'frames_detected': n_hit,
+                'frame_detection_rate': round(n_hit / len(rs), 3) if rs else None,
+                'passes': len(ps), 'passes_detected': sum(p['detected'] for p in ps),
+                'edge_of_frame_detections_matched': edge_hits[g['name']],
+                'in_view_frames_skipped_while_turning': turn_frames[g['name']]}
+        summary['objects'][g['name']] = info
+        print(f"\n{g['name']} ({g['cls']}): in view {len(rs)} frames, detected {n_hit} "
+              f"({100.0 * n_hit / len(rs):.0f}%)" if rs else f"\n{g['name']}: never in view")
+        print(f"  passes: {info['passes']}, detected in {info['passes_detected']}"
+              f"   (plus {info['edge_of_frame_detections_matched']} detections of the partly visible object at the frame edge)")
+        for r in rows:
+            if r['object'] == g['name'] and r['frames_in_view']:
+                print(f"  {r['distance_m']:>8} m: {r['frames_detected']:>3}/{r['frames_in_view']:<3} "
+                      f"rate {r['detection_rate']}")
+    with open(os.path.join(run, 'detection_summary.yaml'), 'w') as f:
+        yaml.safe_dump(summary, f, sort_keys=False)
+    print(f'\nWrote detection_by_distance.csv, detection_passes.csv, false_positives.csv, '
+          f'detection_summary.yaml in {run}')
+
+
+def write(path, rows):
+    if not rows:
+        open(path, 'w').write('')
+        return
+    with open(path, 'w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        w.writeheader()
+        w.writerows(rows)
+
+
+if __name__ == '__main__':
+    main()

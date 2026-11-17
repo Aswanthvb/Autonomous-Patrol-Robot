@@ -1,0 +1,230 @@
+#!/usr/bin/env python3
+"""Match logged detections to the ground truth and tabulate hits and misses.
+
+For every logged frame and every ground-truth object, the script decides whether the object
+was IN VIEW: inside the camera's horizontal field of view, within max range, and with a clear
+line of sight on the saved map. If it was in view, the frame counts as detected when a detection
+of the right class has its box centre near where the object projects in the image.
+Detections that match nothing are false positives.
+
+Usage: python3 analyze_detections.py [run_dir]     (default: newest ~/detection_runs/det_*)
+"""
+import csv
+import glob
+import math
+import os
+import sys
+from collections import defaultdict
+
+import numpy as np
+import yaml
+
+HFOV = 1.047            # camera horizontal field of view (rad), from the robot model
+IMG_W = 640
+CAM_FORWARD = 0.19      # camera is 0.19 m in front of base_footprint (robot model)
+MAX_RANGE = 8.0         # farthest distance counted as "in view" (m)
+WORLD_TO_MAP = (2.0, 0.0)   # map = world + (2.0, 0.0), because the map origin is the spawn point
+BINS = [0.0, 1.5, 3.0, 4.5, 6.0, 8.0]
+PASS_GAP_S = 3.0        # a gap longer than this between in-view frames starts a new pass
+HOME = os.path.expanduser('~')
+GT_CSV = os.path.join(HOME, 'patrol_ws/src/patrol_sim/worlds/ground_truth.csv')
+MAP_YAML = os.path.join(HOME, 'patrol_ws/src/patrol_nav/maps/patrol_map.yaml')
+
+
+def read_pgm(path):
+    data = open(path, 'rb').read()
+    pos, tokens = 0, []
+    while len(tokens) < 4:
+        while data[pos:pos + 1].isspace():
+            pos += 1
+        if data[pos:pos + 1] == b'#':
+            while data[pos:pos + 1] != b'\n':
+                pos += 1
+            continue
+        start = pos
+        while not data[pos:pos + 1].isspace():
+            pos += 1
+        tokens.append(data[start:pos])
+    pos += 1
+    if tokens[0] != b'P5':
+        raise ValueError('only binary PGM (P5) maps are supported')
+    w, h = int(tokens[1]), int(tokens[2])
+    return np.frombuffer(data[pos:pos + w * h], dtype=np.uint8).reshape(h, w)
+
+
+class Grid:
+    def __init__(self, yaml_path):
+        meta = yaml.safe_load(open(yaml_path))
+        img = meta['image']
+        if not os.path.isabs(img):
+            img = os.path.join(os.path.dirname(yaml_path), img)
+        self.arr = read_pgm(img)
+        self.res = float(meta['resolution'])
+        self.ox, self.oy = float(meta['origin'][0]), float(meta['origin'][1])
+        self.h, self.w = self.arr.shape
+
+    def occupied(self, x, y):
+        ix, iy = int((x - self.ox) / self.res), int((y - self.oy) / self.res)
+        row = self.h - 1 - iy
+        if ix < 0 or ix >= self.w or row < 0 or row >= self.h:
+            return False
+        return self.arr[row, ix] <= 100          # trinary map: 0 = occupied, 254 = free
+
+    def line_of_sight(self, a, b, ignore=None, ignore_r=0.6):
+        dist = math.hypot(b[0] - a[0], b[1] - a[1])
+        steps = max(2, int(dist / (self.res * 0.5)))
+        for i in range(steps + 1):
+            t = i / steps
+            x, y = a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])
+            if ignore is not None and math.hypot(x - ignore[0], y - ignore[1]) < ignore_r:
+                continue                       # the target itself is drawn in the map
+            if self.occupied(x, y):
+                return False
+        return True
+
+
+def wrap(a):
+    return math.atan2(math.sin(a), math.cos(a))
+
+
+def newest_run():
+    runs = sorted(glob.glob(os.path.join(HOME, 'detection_runs', 'det_*')))
+    if not runs:
+        sys.exit('No detection runs found in ~/detection_runs')
+    return runs[-1]
+
+
+def main():
+    run = sys.argv[1] if len(sys.argv) > 1 else newest_run()
+    grid = Grid(MAP_YAML)
+    gt = []
+    for r in csv.DictReader(open(GT_CSV)):
+        gt.append({'cls': r['class'], 'name': r['name'],
+                   'x': float(r['x']) + WORLD_TO_MAP[0], 'y': float(r['y']) + WORLD_TO_MAP[1]})
+    frames = [r for r in csv.DictReader(open(os.path.join(run, 'frames.csv')))
+              if r['robot_x'] != '']
+    skipped = sum(1 for _ in csv.DictReader(open(os.path.join(run, 'frames.csv')))) - len(frames)
+    dets = defaultdict(list)
+    for i, r in enumerate(csv.DictReader(open(os.path.join(run, 'detections.csv')))):
+        r['_id'] = i
+        dets[int(r['frame'])].append(r)
+
+    f_px = (IMG_W / 2.0) / math.tan(HFOV / 2.0)
+    matched_ids = set()
+    records = []                      # one per (frame, object) where the object was in view
+    for fr in frames:
+        rx, ry, yaw = float(fr['robot_x']), float(fr['robot_y']), float(fr['robot_yaw'])
+        cam = (rx + CAM_FORWARD * math.cos(yaw), ry + CAM_FORWARD * math.sin(yaw))
+        fdets = dets.get(int(fr['frame']), [])
+        for g in gt:
+            dx, dy = g['x'] - cam[0], g['y'] - cam[1]
+            dist = math.hypot(dx, dy)
+            bearing = wrap(math.atan2(dy, dx) - yaw)
+            if dist > MAX_RANGE or abs(bearing) > HFOV / 2.0:
+                continue
+            if not grid.line_of_sight(cam, (g['x'], g['y']), ignore=(g['x'], g['y'])):
+                continue
+            px = IMG_W / 2.0 - f_px * math.tan(bearing)
+            hit, conf = False, ''
+            for d in fdets:
+                if d['class'] != g['cls'] or d['_id'] in matched_ids:
+                    continue
+                cx, bw = (float(d['x1']) + float(d['x2'])) / 2.0, float(d['x2']) - float(d['x1'])
+                if abs(cx - px) <= max(40.0, 0.75 * bw):
+                    hit, conf = True, float(d['conf'])
+                    matched_ids.add(d['_id'])
+                    break
+            records.append({'obj': g['name'], 'cls': g['cls'], 't': float(fr['sim_time']),
+                            'dist': dist, 'hit': hit, 'conf': conf,
+                            'lap': fr['lap'], 'wp': fr['waypoint']})
+
+    # ---- by distance
+    rows = []
+    for g in gt:
+        for lo, hi in zip(BINS[:-1], BINS[1:]):
+            rs = [r for r in records if r['obj'] == g['name'] and lo <= r['dist'] < hi]
+            n_hit = sum(r['hit'] for r in rs)
+            confs = [r['conf'] for r in rs if r['hit']]
+            rows.append({'object': g['name'], 'class': g['cls'], 'distance_m': f'{lo:.1f}-{hi:.1f}',
+                         'frames_in_view': len(rs), 'frames_detected': n_hit,
+                         'detection_rate': round(n_hit / len(rs), 3) if rs else '',
+                         'mean_confidence': round(sum(confs) / len(confs), 3) if confs else ''})
+    write(os.path.join(run, 'detection_by_distance.csv'), rows)
+
+    # ---- passes (contiguous periods in which an object was in view)
+    pass_rows = []
+    for g in gt:
+        rs = sorted((r for r in records if r['obj'] == g['name']), key=lambda r: r['t'])
+        groups, cur = [], []
+        for r in rs:
+            if cur and r['t'] - cur[-1]['t'] > PASS_GAP_S:
+                groups.append(cur)
+                cur = []
+            cur.append(r)
+        if cur:
+            groups.append(cur)
+        for k, grp in enumerate(groups, 1):
+            hits = [r for r in grp if r['hit']]
+            pass_rows.append({
+                'object': g['name'], 'pass': k, 'start_t': round(grp[0]['t'], 1),
+                'end_t': round(grp[-1]['t'], 1), 'lap': grp[0]['lap'], 'waypoint': grp[0]['wp'],
+                'frames_in_view': len(grp), 'frames_detected': len(hits),
+                'detected': bool(hits),
+                'first_detection_distance_m': round(hits[0]['dist'], 2) if hits else '',
+                'closest_distance_m': round(min(r['dist'] for r in grp), 2)})
+    write(os.path.join(run, 'detection_passes.csv'), pass_rows)
+
+    # ---- false positives
+    fp_rows, n_dets = [], 0
+    for fdl in dets.values():
+        for d in fdl:
+            n_dets += 1
+            if d['_id'] in matched_ids:
+                continue
+            fp_rows.append({'sim_time': d['sim_time'], 'class': d['class'],
+                            'raw_class': d['raw_class'], 'conf': d['conf'],
+                            'lap': d['lap'], 'waypoint': d['waypoint'], 'snapshot': d['snapshot']})
+    write(os.path.join(run, 'false_positives.csv'), fp_rows)
+
+    # ---- summary
+    summary = {'run': os.path.basename(run), 'frames_logged': len(frames),
+               'frames_without_pose_skipped': skipped, 'detections_logged': n_dets,
+               'detections_matched': len(matched_ids), 'false_positives': len(fp_rows),
+               'precision': round(len(matched_ids) / n_dets, 3) if n_dets else None,
+               'objects': {}}
+    print(f'\nRun: {run}')
+    print(f'Frames: {len(frames)}   Detections: {n_dets}   Matched: {len(matched_ids)}   '
+          f'False positives: {len(fp_rows)}')
+    for g in gt:
+        rs = [r for r in records if r['obj'] == g['name']]
+        ps = [p for p in pass_rows if p['object'] == g['name']]
+        n_hit = sum(r['hit'] for r in rs)
+        info = {'class': g['cls'], 'frames_in_view': len(rs), 'frames_detected': n_hit,
+                'frame_detection_rate': round(n_hit / len(rs), 3) if rs else None,
+                'passes': len(ps), 'passes_detected': sum(p['detected'] for p in ps)}
+        summary['objects'][g['name']] = info
+        print(f"\n{g['name']} ({g['cls']}): in view {len(rs)} frames, detected {n_hit} "
+              f"({100.0 * n_hit / len(rs):.0f}%)" if rs else f"\n{g['name']}: never in view")
+        print(f"  passes: {info['passes']}, detected in {info['passes_detected']}")
+        for r in rows:
+            if r['object'] == g['name'] and r['frames_in_view']:
+                print(f"  {r['distance_m']:>8} m: {r['frames_detected']:>3}/{r['frames_in_view']:<3} "
+                      f"rate {r['detection_rate']}")
+    with open(os.path.join(run, 'detection_summary.yaml'), 'w') as f:
+        yaml.safe_dump(summary, f, sort_keys=False)
+    print(f'\nWrote detection_by_distance.csv, detection_passes.csv, false_positives.csv, '
+          f'detection_summary.yaml in {run}')
+
+
+def write(path, rows):
+    if not rows:
+        open(path, 'w').write('')
+        return
+    with open(path, 'w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        w.writeheader()
+        w.writerows(rows)
+
+
+if __name__ == '__main__':
+    main()
