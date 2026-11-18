@@ -1,0 +1,8 @@
+interrupted: false
+laps_completed: 1
+laps_fully_successful: 0
+lap_completion_rate: 0.0
+waypoint_attempts: 5
+waypoint_successes: 2
+waypoint_success_rate: 0.4
+average_lap_time_s: 119.0

@@ -1,0 +1,8 @@
+Wed Nov 18 11:39:03 AM IST 2026: about to swap backpack to 'Jansport backpack red' (was Fuel 'Backpack'), same position (3.5, 2.5)
+Wed Nov 18 11:42:31 AM IST 2026: swapped backpack to 'Jansport backpack red' at (3.5, 2.5), yaw 0.0 (was Fuel 'Backpack')
+Wed Nov 18 12:25:59 PM IST 2026: jansport_run1 was driven as laps:=1 (part1) then laps:=2 (jansport_run1_patrol); one detection folder covers both; lap numbers restart in the logs
+Wed Nov 18 12:26:20 PM IST 2026: restored original Fuel 'Backpack' world for the doorway test
+Wed Nov 18 12:27:01 PM IST 2026: jansport_run1 was driven as laps:=1 (part1, jansport_run1_part1_patrol) then laps:=2 (jansport_run1_patrol); one detection folder covers both; lap numbers restart in the logs
+Wed Nov 18 12:27:11 PM IST 2026: restored original Fuel 'Backpack' world
+Wed Nov 18 12:28:14 PM IST 2026: doorway test: original Backpack world; blocking doorway with boxes at world (0,-0.5) and (0,0.5) via Gazebo GUI; laps:=1
+Wed Nov 18 12:40:13 PM IST 2026: doorway attempt 1 FAILED to block the doorway; 5/5 reached, 126.0 s; kept as a control, not a failure test

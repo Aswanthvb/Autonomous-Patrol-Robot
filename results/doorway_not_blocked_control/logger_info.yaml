@@ -1,0 +1,4 @@
+frames: 323
+detections: 64
+snapshots: 8
+snapshot_cooldown_s: 3.0

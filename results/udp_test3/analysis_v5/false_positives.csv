@@ -1,0 +1,17 @@
+sim_time,class,raw_class,conf,lap,waypoint,snapshot
+340.56,person,person,0.678,1,WEST_NORTH,
+481.276,person,person,0.815,2,WEST_NORTH,
+481.8,person,person,0.815,2,WEST_NORTH,
+481.868,person,person,0.815,2,WEST_NORTH,
+482.856,person,person,0.815,2,WEST_NORTH,
+483.056,person,person,0.815,2,WEST_NORTH,
+483.98,person,person,0.815,2,WEST_NORTH,snapshots/484.0_L2_WEST_NORTH_person.png
+484.44,person,person,0.815,2,WEST_SOUTH,
+484.904,person,person,0.827,2,WEST_SOUTH,
+485.3,person,person,0.835,2,WEST_SOUTH,
+485.432,person,person,0.842,2,WEST_SOUTH,
+594.4,person,person,0.611,3,WEST_NORTH,snapshots/594.4_L3_WEST_NORTH_person.png
+594.796,person,person,0.782,3,WEST_NORTH,
+621.92,person,person,0.775,3,WEST_NORTH,
+622.316,person,person,0.775,3,WEST_NORTH,
+626.604,person,person,0.636,3,WEST_SOUTH,

@@ -1,0 +1,21 @@
+
+Run: /home/aswanth-v-b/detection_runs/udp_test3_trimmed
+Frames: 703   Detections: 209   Matched: 171   Duplicate boxes on a matched object: 16   False positives: 16
+Unmatched detections while the robot was turning faster than 0.5 rad/s (pose unreliable, not scored): 6   [58 turning frames of 703]
+
+target_person_1 (person): in view 132 frames, detected 111 (84%)
+  passes: 6, detected in 6   (plus 3 detections of the partly visible object at the frame edge)
+   1.5-3.0 m:  14/14  rate 1.0
+   3.0-4.5 m:  45/46  rate 0.978
+   4.5-6.0 m:  40/60  rate 0.667
+   6.0-8.0 m:  12/12  rate 1.0
+
+target_backpack_1 (backpack): in view 153 frames, detected 55 (36%)
+  passes: 6, detected in 3   (plus 2 detections of the partly visible object at the frame edge)
+   0.0-1.5 m:  13/13  rate 1.0
+   1.5-3.0 m:  26/32  rate 0.812
+   3.0-4.5 m:  16/25  rate 0.64
+   4.5-6.0 m:   0/33  rate 0.0
+   6.0-8.0 m:   0/50  rate 0.0
+
+Wrote detection_by_distance.csv, detection_passes.csv, false_positives.csv, detection_summary.yaml in /home/aswanth-v-b/detection_runs/udp_test3_trimmed

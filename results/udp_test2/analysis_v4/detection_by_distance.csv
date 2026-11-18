@@ -1,0 +1,11 @@
+object,class,distance_m,frames_in_view,frames_detected,detection_rate,mean_confidence
+target_person_1,person,0.0-1.5,0,0,,
+target_person_1,person,1.5-3.0,9,9,1.0,0.746
+target_person_1,person,3.0-4.5,44,42,0.955,0.839
+target_person_1,person,4.5-6.0,63,51,0.81,0.81
+target_person_1,person,6.0-8.0,4,3,0.75,0.856
+target_backpack_1,backpack,0.0-1.5,9,9,1.0,0.692
+target_backpack_1,backpack,1.5-3.0,30,28,0.933,0.561
+target_backpack_1,backpack,3.0-4.5,15,14,0.933,0.614
+target_backpack_1,backpack,4.5-6.0,6,0,0.0,
+target_backpack_1,backpack,6.0-8.0,62,0,0.0,

@@ -1,0 +1,6 @@
+sim_time,wall_time,lap,waypoint_index,waypoint,result,detail,duration_s,error_code,recoveries,target_x,target_y,robot_x,robot_y,robot_yaw
+2786.0,1794414546.04,1,0,WEST_NORTH,succeeded,goal reached,56.0,0,12,-0.5,3.0,-0.748,3.038,-1.432
+2797.0,1794414574.63,1,1,WEST_SOUTH,failed,Nav2 aborted (error 0),7.5,0,0,-0.5,-3.0,-0.092,1.336,-1.393
+2810.0,1794414605.34,1,2,DOORWAY,succeeded,goal reached,12.5,0,0,2.0,0.0,1.794,0.127,-0.55
+2822.5,1794414630.24,1,3,EAST_SOUTH,failed,Nav2 aborted (error 103),8.99,103,0,5.0,-3.0,-0.977,-2.609,-0.104
+2848.5,1794414688.63,1,4,EAST_NORTH,failed,Nav2 aborted (error 208),25.5,208,16,4.5,3.0,1.197,-1.407,-2.231

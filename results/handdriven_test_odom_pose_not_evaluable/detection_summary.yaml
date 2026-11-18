@@ -1,0 +1,22 @@
+run: det_20261113_183708
+frames_logged: 280
+frames_without_pose_skipped: 0
+detections_logged: 192
+detections_matched: 67
+false_positives: 125
+precision: 0.349
+objects:
+  target_person_1:
+    class: person
+    frames_in_view: 49
+    frames_detected: 0
+    frame_detection_rate: 0.0
+    passes: 2
+    passes_detected: 0
+  target_backpack_1:
+    class: backpack
+    frames_in_view: 90
+    frames_detected: 67
+    frame_detection_rate: 0.744
+    passes: 1
+    passes_detected: 1

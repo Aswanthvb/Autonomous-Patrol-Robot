@@ -1,0 +1,12 @@
+object,pass,start_t,end_t,lap,waypoint,frames_in_view,frames_detected,detected,first_detection_distance_m,closest_distance_m
+target_person_1,1,406.0,421.3,1,WEST_NORTH,31,28,True,5.22,2.59
+target_person_1,2,522.1,529.5,2,WEST_NORTH,11,11,True,6.19,4.55
+target_person_1,3,547.9,562.0,2,WEST_NORTH,29,23,True,5.22,2.85
+target_person_1,4,663.4,670.4,3,WEST_NORTH,18,17,True,6.13,4.69
+target_person_1,5,688.4,703.3,3,WEST_NORTH,31,26,True,5.23,2.86
+target_backpack_1,1,435.9,447.2,1,WEST_SOUTH,21,0,False,,5.91
+target_backpack_1,2,492.6,503.2,1,EAST_NORTH,18,17,True,3.61,1.2
+target_backpack_1,3,578.2,589.6,2,WEST_SOUTH,23,0,False,,5.8
+target_backpack_1,4,633.6,644.4,2,EAST_NORTH,20,19,True,3.68,1.16
+target_backpack_1,5,719.1,731.6,3,WEST_SOUTH,24,0,False,,5.7
+target_backpack_1,6,777.3,785.9,3,EAST_NORTH,16,15,True,3.29,1.26

@@ -1,0 +1,29 @@
+run: udp_test1
+frames_logged: 787
+frames_without_pose_skipped: 0
+detections_logged: 203
+detections_matched: 173
+duplicate_boxes_on_matched_objects: 12
+unmatched_during_fast_turns: 0
+frames_during_fast_turns: 0
+false_positives: 18
+precision_on_target: 0.911
+objects:
+  target_person_1:
+    class: person
+    frames_in_view: 139
+    frames_detected: 118
+    frame_detection_rate: 0.849
+    passes: 5
+    passes_detected: 5
+    edge_of_frame_detections_matched: 0
+    in_view_frames_skipped_while_turning: 0
+  target_backpack_1:
+    class: backpack
+    frames_in_view: 127
+    frames_detected: 54
+    frame_detection_rate: 0.425
+    passes: 6
+    passes_detected: 3
+    edge_of_frame_detections_matched: 1
+    in_view_frames_skipped_while_turning: 0

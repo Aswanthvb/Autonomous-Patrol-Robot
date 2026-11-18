@@ -1,0 +1,29 @@
+run: main_3laps
+frames_logged: 910
+frames_without_pose_skipped: 0
+detections_logged: 210
+detections_matched: 179
+duplicate_boxes_on_matched_objects: 12
+unmatched_during_fast_turns: 5
+frames_during_fast_turns: 62
+false_positives: 14
+precision_on_target: 0.91
+objects:
+  target_person_1:
+    class: person
+    frames_in_view: 124
+    frames_detected: 105
+    frame_detection_rate: 0.847
+    passes: 7
+    passes_detected: 7
+    edge_of_frame_detections_matched: 6
+    in_view_frames_skipped_while_turning: 8
+  target_backpack_1:
+    class: backpack
+    frames_in_view: 155
+    frames_detected: 64
+    frame_detection_rate: 0.413
+    passes: 5
+    passes_detected: 3
+    edge_of_frame_detections_matched: 1
+    in_view_frames_skipped_while_turning: 4

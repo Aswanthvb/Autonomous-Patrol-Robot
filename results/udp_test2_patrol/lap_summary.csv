@@ -1,0 +1,4 @@
+lap,waypoints_total,waypoints_succeeded,lap_success,start_sim_time,duration_s
+1,5,5,True,384.5,129.5
+2,5,5,True,514.0,141.5
+3,5,5,True,655.5,142.51

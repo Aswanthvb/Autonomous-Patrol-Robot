@@ -1,0 +1,13 @@
+# Patrol settings. All poses are in the map frame (meters, radians).
+# Map frame = world frame shifted by +2.0 m in x (the robot spawned at world (-2, 0)).
+patrol:
+  laps: 3                    # 0 = patrol forever
+  waypoint_timeout_s: 90.0   # cancel and log a waypoint that takes longer than this
+  pause_s: 3.0               # stop at each reached waypoint so the camera can look around
+  output_dir: ~/patrol_runs
+  waypoints:
+    - {name: WEST_NORTH, x: -0.5, y: 3.0,  yaw: -1.5708}
+    - {name: WEST_SOUTH, x: -0.5, y: -3.0, yaw: 0.876}
+    - {name: DOORWAY,    x: 2.0,  y: 0.0,  yaw: -0.785}
+    - {name: EAST_SOUTH, x: 5.0,  y: -3.0, yaw: 1.654}
+    - {name: EAST_NORTH, x: 4.5,  y: 3.0,  yaw: 3.1416}

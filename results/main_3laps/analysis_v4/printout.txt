@@ -1,0 +1,21 @@
+
+Run: /home/aswanth-v-b/detection_runs/main_3laps
+Frames: 910   Detections: 210   Matched: 177   Duplicate boxes on a matched object: 12   False positives: 21
+Unmatched detections while the robot was turning faster than 1000000000.0 rad/s (pose unreliable, not scored): 0   [0 turning frames of 910]
+
+target_person_1 (person): in view 129 frames, detected 107 (83%)
+  passes: 6, detected in 6   (plus 5 detections of the partly visible object at the frame edge)
+   1.5-3.0 m:   9/9   rate 1.0
+   3.0-4.5 m:  31/31  rate 1.0
+   4.5-6.0 m:  65/84  rate 0.774
+   6.0-8.0 m:   2/5   rate 0.4
+
+target_backpack_1 (backpack): in view 124 frames, detected 64 (52%)
+  passes: 5, detected in 3   (plus 1 detections of the partly visible object at the frame edge)
+   0.0-1.5 m:  16/16  rate 1.0
+   1.5-3.0 m:  28/35  rate 0.8
+   3.0-4.5 m:  20/21  rate 0.952
+   4.5-6.0 m:   0/2   rate 0.0
+   6.0-8.0 m:   0/50  rate 0.0
+
+Wrote detection_by_distance.csv, detection_passes.csv, false_positives.csv, detection_summary.yaml in /home/aswanth-v-b/detection_runs/main_3laps

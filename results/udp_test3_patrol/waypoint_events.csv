@@ -1,0 +1,16 @@
+sim_time,wall_time,lap,waypoint_index,waypoint,result,detail,duration_s,error_code,recoveries,target_x,target_y,robot_x,robot_y,robot_yaw
+340.5,1794936146.4,1,0,WEST_NORTH,succeeded,goal reached,17.5,0,0,-0.5,3.0,-0.418,2.803,-1.587
+371.0,1794936186.94,1,1,WEST_SOUTH,succeeded,goal reached,27.0,0,0,-0.5,-3.0,-0.417,-2.822,0.791
+391.0,1794936211.43,1,2,DOORWAY,succeeded,goal reached,16.5,0,0,2.0,0.0,1.776,-0.154,-0.716
+414.5,1794936239.55,1,3,EAST_SOUTH,succeeded,goal reached,20.0,0,0,5.0,-3.0,4.889,-2.845,1.483
+445.0,1794936276.37,1,4,EAST_NORTH,succeeded,goal reached,27.0,0,0,4.5,3.0,4.545,2.752,3.11
+481.0,1794936322.41,2,0,WEST_NORTH,succeeded,goal reached,32.5,0,0,-0.5,3.0,-0.371,2.806,-1.666
+511.5,1794936363.19,2,1,WEST_SOUTH,succeeded,goal reached,27.0,0,0,-0.5,-3.0,-0.364,-2.808,0.839
+531.5,1794936387.18,2,2,DOORWAY,succeeded,goal reached,16.5,0,0,2.0,0.0,1.825,-0.156,-0.607
+555.0,1794936415.05,2,3,EAST_SOUTH,succeeded,goal reached,20.0,0,0,5.0,-3.0,4.864,-2.837,1.517
+585.5,1794936452.55,2,4,EAST_NORTH,succeeded,goal reached,27.0,0,0,4.5,3.0,4.563,2.76,3.091
+622.0,1794936499.77,3,0,WEST_NORTH,succeeded,goal reached,33.0,0,0,-0.5,3.0,-0.398,2.819,-1.578
+652.5,1794936543.43,3,1,WEST_SOUTH,succeeded,goal reached,27.0,0,0,-0.5,-3.0,-0.418,-2.78,0.937
+673.0,1794936568.75,3,2,DOORWAY,succeeded,goal reached,17.0,0,0,2.0,0.0,1.83,-0.124,-0.756
+697.5,1794936599.17,3,3,EAST_SOUTH,succeeded,goal reached,21.0,0,0,5.0,-3.0,4.895,-2.854,1.613
+727.5,1794936638.31,3,4,EAST_NORTH,succeeded,goal reached,26.5,0,0,4.5,3.0,4.55,2.764,3.03

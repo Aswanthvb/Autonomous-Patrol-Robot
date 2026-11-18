@@ -1,0 +1,21 @@
+
+Run: /home/aswanth-v-b/detection_runs/jansport_run1
+Frames: 1114   Detections: 237   Matched: 209   Duplicate boxes on a matched object: 0   False positives: 28
+Unmatched detections while the robot was turning faster than 1000000000.0 rad/s (pose unreliable, not scored): 0   [0 turning frames of 1114]
+
+target_person_1 (person): in view 174 frames, detected 152 (87%)
+  passes: 5, detected in 5   (plus 1 detections of the partly visible object at the frame edge)
+   1.5-3.0 m:  18/19  rate 0.947
+   3.0-4.5 m:  57/57  rate 1.0
+   4.5-6.0 m:  73/93  rate 0.785
+   6.0-8.0 m:   4/5   rate 0.8
+
+target_backpack_1 (backpack): in view 158 frames, detected 55 (35%)
+  passes: 6, detected in 3   (plus 1 detections of the partly visible object at the frame edge)
+   0.0-1.5 m:  12/12  rate 1.0
+   1.5-3.0 m:  31/46  rate 0.674
+   3.0-4.5 m:  12/19  rate 0.632
+   4.5-6.0 m:   0/3   rate 0.0
+   6.0-8.0 m:   0/78  rate 0.0
+
+Wrote detection_by_distance.csv, detection_passes.csv, false_positives.csv, detection_summary.yaml in /home/aswanth-v-b/detection_runs/jansport_run1

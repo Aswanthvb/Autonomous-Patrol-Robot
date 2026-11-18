@@ -1,0 +1,4 @@
+object,pass,start_t,end_t,lap,waypoint,frames_in_view,frames_detected,detected,first_detection_distance_m,closest_distance_m
+target_person_1,1,298.3,303.9,,,12,0,False,,2.2
+target_person_1,2,312.4,335.1,,,37,0,False,,1.46
+target_backpack_1,1,356.8,410.7,,,90,67,True,2.5,0.95
